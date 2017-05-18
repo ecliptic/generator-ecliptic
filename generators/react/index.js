@@ -8,19 +8,28 @@ const chalk = require('chalk')
 
 module.exports = class ReactGenerator extends Base {
   initializing () {
+    this.log('\n')
     this.log(text('ecliptic', {font: 'Big Money-nw'}))
-    this.log(`\nWelcome to ${chalk.blue('@ecliptic/shipyard')}!`)
+    this.log(`\n\nWelcome to ${chalk.blue('@ecliptic/shipyard')}!\n`)
 
-    const origin = exec('git config --get remote.origin.url')
-    if (origin.toString()) {
-      this.config.set('repoType', 'git')
-      this.config.set('repoUrl', origin.trim())
+    try {
+      const origin = exec('git config --get remote.origin.url')
+      if (origin.toString()) this.config.set('repo', origin.trim())
+    } catch (error) {
+      // pass
+    }
 
+    try {
       const author = exec('git config --get user.name')
       const email = exec('git config --get user.email')
       if (author.toString() && email.toString()) {
-        this.config.set('author', `${author.trim()} <${email.trim()}>`)
+        this.config.set(
+          'author',
+          `${author.toString().trim()} <${email.toString().trim()}>`
+        )
       }
+    } catch (error) {
+      throw error
     }
   }
 
@@ -39,16 +48,9 @@ module.exports = class ReactGenerator extends Base {
       },
       {
         type: 'input',
-        name: 'repoType',
-        message: 'The repository type:',
-        default: this.config.get('repoType'),
-        store: true,
-      },
-      {
-        type: 'input',
-        name: 'repoUrl',
+        name: 'repo',
         message: 'The repository url:',
-        default: this.config.get('repoUrl'),
+        default: this.config.get('repo'),
       },
       {
         type: 'input',
@@ -71,23 +73,16 @@ module.exports = class ReactGenerator extends Base {
 
   writing () {
     // Copy over static files
-    this.fs.copy(this.templatePath('../static/**/*'), this.destinationRoot())
+    this.fs.copy(this.templatePath('../static/**/*'), this.destinationRoot(), {
+      globOptions: {dot: true},
+    })
 
-    // Copy over any dotfiles
-    this.fs.copy(this.templatePath('../static/.*'), this.destinationRoot())
-
-    // Render all of the templates
+    // Render templates
     this.fs.copyTpl(
       this.templatePath('**/*'),
       this.destinationRoot(),
-      this.config.getAll()
-    )
-
-    // Render any dotfile templates
-    this.fs.copyTpl(
-      this.templatePath('.*'),
-      this.destinationRoot(),
-      this.config.getAll()
+      this.config.getAll(),
+      {globOptions: {dot: true}}
     )
 
     // Create the flow-typed directory

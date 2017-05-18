@@ -5,16 +5,15 @@
   "private": true,
   "main": "src/Main.js",
   "repository": {
-    "type": "<%= repoType %>",
-    "url": "<%= repoUrl %>",
-
+    "type": "git",
+    "url": "<%= repo %>"
   },
   "author": "<%= author %>",
   "license": "UNLICENSED",
   "keywords": [
-  <% keywords.forEach(function (keyword, i) { -%>
+<% keywords.forEach(function (keyword, i) { -%>
     "<%= keyword %>"<% if (i !== keywords.length - 1) { %>,<% } %>
-  <% }) -%>
+<% }) -%>
   ],
   "engines": {
     "node": "7.10.0"
