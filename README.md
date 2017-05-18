@@ -1,6 +1,6 @@
 # @ecliptic/shipyard
 
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/@ecliptic/shipyard) [![license](https://img.shields.io/github/license/ecliptic/shipyard.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@ecliptic/shipyard.svg)](https://www.npmjs.com/package/@ecliptic/shipyard) [![license](https://img.shields.io/github/license/ecliptic/shipyard.svg)](LICENSE)
 
 Ecliptic's Yeoman generators for scaffolding new applications
 
