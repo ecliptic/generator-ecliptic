@@ -9,10 +9,6 @@
     "url": "https://github.com/ecliptic/shipyard/issues"
   },
   "license": "Apache-2.0",
-  "scripts": {
-    "precommit": "lint-staged",
-    "format": "prettier-eslint --write \"generators/**/*.js\" \"!generators/*/templates/*\""
-  },
   "files": [
     "generators"
   ],
@@ -35,15 +31,6 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.46.0",
-    "husky": "^0.13.3",
-    "lint-staged": "^3.4.2",
-    "prettier-eslint-cli": "^3.4.4"
-  },
-  "lint-staged": {
-    "*.js": [
-      "yarn run format",
-      "git add"
-    ]
+    "flow-bin": "^0.46.0"
   }
 }
