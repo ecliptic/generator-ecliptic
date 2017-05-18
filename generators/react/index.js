@@ -14,7 +14,7 @@ module.exports = class ReactGenerator extends Base {
 
     try {
       const origin = exec('git config --get remote.origin.url')
-      if (origin.toString()) this.config.set('repo', origin.trim())
+      if (origin.toString()) this.config.set('repo', origin.toString().trim())
     } catch (error) {
       // pass
     }
@@ -29,7 +29,7 @@ module.exports = class ReactGenerator extends Base {
         )
       }
     } catch (error) {
-      throw error
+      // pass
     }
   }
 
