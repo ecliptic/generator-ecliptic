@@ -1,6 +1,6 @@
 // @flow
 import React from 'react'
 
-export default function Home () {
-  return <div>Hello world!</div>
+export default function NotFound () {
+  return <div>404!</div>
 }

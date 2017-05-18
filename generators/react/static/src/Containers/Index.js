@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import React from 'react'
 import type {Store} from 'redux'
 
-import Nome from 'Components/Home'
+import Home from 'Components/Home'
 import NotFound from 'Components/NotFound'
 import type {State, Action} from 'State/Store'
 
