@@ -1,6 +1,6 @@
 {
   "name": "generator-ecliptic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ecliptic's Yeoman generators for scaffolding new applications",
   "repository": "https://github.com/ecliptic/generator-ecliptic.git",
   "author": "Brandon Konkle <brandon@ecliptic.io>",
