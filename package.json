@@ -2,7 +2,6 @@
   "name": "@ecliptic/shipyard",
   "version": "1.0.2",
   "description": "Ecliptic's Yeoman generators for scaffolding new applications",
-  "main": "index.js",
   "repository": "https://github.com/ecliptic/shipyard.git",
   "author": "Brandon Konkle <brandon@ecliptic.io>",
   "bugs": {
