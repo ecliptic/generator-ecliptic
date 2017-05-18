@@ -87,6 +87,12 @@ module.exports = class ReactGenerator extends Base {
 
     // Create the flow-typed directory
     mkdirp(this.destinationPath('flow-typed'))
+
+    // Move the gitignore into place
+    this.fs.move(
+      this.destinationPath('gitignore'),
+      this.destinationPath('.gitignore')
+    )
   }
 
   install () {
