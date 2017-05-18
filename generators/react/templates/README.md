@@ -62,4 +62,4 @@ $ yarn run test-integration
 
 ## Copyright
 
-Copyright 2017 Ecliptic, LLC
+Copyright 2017 Ecliptic, LLC.
