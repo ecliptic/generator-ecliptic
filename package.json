@@ -1,6 +1,6 @@
 {
   "name": "@ecliptic/shipyard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ecliptic's Yeoman generators for scaffolding new applications",
   "main": "index.js",
   "repository": "https://github.com/ecliptic/shipyard.git",
