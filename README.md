@@ -2,6 +2,20 @@
 
 [![npm](https://img.shields.io/npm/v/generator-ecliptic.svg)](https://www.npmjs.com/package/generator-ecliptic) [![license](https://img.shields.io/github/license/ecliptic/generator-ecliptic.svg)](LICENSE)
 
+```
+                    $$\ $$\            $$\     $$\           
+                    $$ |\__|           $$ |    \__|          
+ $$$$$$\   $$$$$$$\ $$ |$$\  $$$$$$\ $$$$$$\   $$\  $$$$$$$\ 
+$$  __$$\ $$  _____|$$ |$$ |$$  __$$\\_$$  _|  $$ |$$  _____|
+$$$$$$$$ |$$ /      $$ |$$ |$$ /  $$ | $$ |    $$ |$$ /      
+$$   ____|$$ |      $$ |$$ |$$ |  $$ | $$ |$$\ $$ |$$ |      
+\$$$$$$$\ \$$$$$$$\ $$ |$$ |$$$$$$$  | \$$$$  |$$ |\$$$$$$$\ 
+ \_______| \_______|\__|\__|$$  ____/   \____/ \__| \_______|
+                            $$ |                             
+                            $$ |                             
+                            \__|                             
+```
+
 Ecliptic's Yeoman generators for scaffolding new applications
 
 ## Installation
