@@ -1,0 +1,49 @@
+{
+  "name": "@ecliptic/shipyard",
+  "version": "1.0.0",
+  "description": "Ecliptic's Yeoman generators for scaffolding new applications",
+  "main": "index.js",
+  "repository": "https://github.com/ecliptic/shipyard.git",
+  "author": "Brandon Konkle <brandon@ecliptic.io>",
+  "bugs": {
+    "url": "https://github.com/ecliptic/shipyard/issues"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "precommit": "lint-staged",
+    "format": "prettier-eslint --write \"generators/*/*.js\""
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "figlet": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^1.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.46.0",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.2",
+    "prettier-eslint-cli": "^3.4.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn run format",
+      "git add"
+    ]
+  }
+}
