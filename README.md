@@ -20,6 +20,14 @@ $ npm install -g @ecliptic/shipyard
 
 Currently, our only generator builds a simple React web project. This will likely be expanded in the future to cover other types of projects as well - including templates for React Native, "serverless" endpoints, and universal applications.
 
+### Yeoman
+
+First, you'll need to install Yeoman to use this generator.
+
+```sh
+$ yarn global add yo
+```
+
 ### React
 
 To bootstrap a React web project, use the `react` generator:
