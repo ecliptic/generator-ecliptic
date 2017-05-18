@@ -10,7 +10,7 @@ module.exports = class ReactGenerator extends Base {
   initializing () {
     this.log('\n')
     this.log(text('ecliptic', {font: 'Big Money-nw'}))
-    this.log(`\n\nWelcome to ${chalk.blue('@ecliptic/shipyard')}!\n`)
+    this.log(`\n\nWelcome to ${chalk.blue('ecliptic:react')}!\n`)
 
     try {
       const origin = exec('git config --get remote.origin.url')

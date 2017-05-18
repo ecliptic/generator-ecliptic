@@ -1,11 +1,11 @@
 {
-  "name": "@ecliptic/shipyard",
-  "version": "1.0.2",
+  "name": "generator-ecliptic",
+  "version": "1.0.0",
   "description": "Ecliptic's Yeoman generators for scaffolding new applications",
-  "repository": "https://github.com/ecliptic/shipyard.git",
+  "repository": "https://github.com/ecliptic/generator-ecliptic.git",
   "author": "Brandon Konkle <brandon@ecliptic.io>",
   "bugs": {
-    "url": "https://github.com/ecliptic/shipyard/issues"
+    "url": "https://github.com/ecliptic/generator-ecliptic/issues"
   },
   "license": "Apache-2.0",
   "files": [

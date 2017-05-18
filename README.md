@@ -1,19 +1,19 @@
-# @ecliptic/shipyard
+# generator-ecliptic
 
-[![npm](https://img.shields.io/npm/v/@ecliptic/shipyard.svg)](https://www.npmjs.com/package/@ecliptic/shipyard) [![license](https://img.shields.io/github/license/ecliptic/shipyard.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/generator-ecliptic.svg)](https://www.npmjs.com/package/generator-ecliptic) [![license](https://img.shields.io/github/license/ecliptic/generator-ecliptic.svg)](LICENSE)
 
 Ecliptic's Yeoman generators for scaffolding new applications
 
 ## Installation
 
 ```sh
-$ yarn global add @ecliptic/shipyard
+$ yarn global add generator-ecliptic
 ```
 
 You can also use npm:
 
 ```sh
-$ npm install -g @ecliptic/shipyard
+$ npm install -g generator-ecliptic
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ To bootstrap a React web project, use the `react` generator:
 ```sh
 $ mkdir my-new-project
 $ cd my-new-project
-$ yo @eclpitic/shipyard:react
+$ yo eclpitic:react
 ```
 
 Answer the questions, and you'll have a brand new web application set up in your current directory. Tada! 🎉
