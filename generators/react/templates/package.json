@@ -99,5 +99,11 @@
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom"
     ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn run format",
+      "git add"
+    ]
   }
 }
