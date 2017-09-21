@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:7.10
+    working_directory: ~/<%= name %>
+    steps:
+      - checkout
+      - restore_cache:
+          key: <%= name %>-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          paths:
+            - ~/.cache/yarn
+          key: <%= name %>-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+      - run: yarn test
