@@ -5,12 +5,15 @@ const {sync: mkdirp} = require('mkdirp')
 const {textSync: text} = require('figlet')
 const Base = require('yeoman-generator')
 const chalk = require('chalk')
+const generator = require('generate-password')
 
-module.exports = class ReactGenerator extends Base {
+module.exports = class KoaGenerator extends Base {
   initializing () {
     this.log('\n')
     this.log(text('ecliptic', {font: 'Big Money-nw'}))
     this.log(`\n\nWelcome to ${chalk.blue('ecliptic:react')}!\n`)
+
+    this.config.set('sessionKey', generator.generate({length: 10, numbers: true}));
 
     try {
       const origin = exec('git config --get remote.origin.url')
