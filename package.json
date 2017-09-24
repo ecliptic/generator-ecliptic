@@ -18,9 +18,7 @@
     "lint.types": "echo \"Checking Flow types...\" && flow",
     "postinstall": "yarn install.flow",
     "precommit": "lint-staged",
-    "prepush": "npm run lint.types && npm run test",
-    "test": "NODE_ENV=test jest",
-    "test.watch": "yarn test -- --watch"
+    "prepush": "npm run lint.types"
   },
   "dependencies": {
     "chalk": "^2.1.0",
