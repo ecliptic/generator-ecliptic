@@ -13,7 +13,10 @@ module.exports = class KoaGenerator extends Base {
     this.log(text('ecliptic', {font: 'Big Money-nw'}))
     this.log(`\n\nWelcome to ${chalk.blue('ecliptic:react')}!\n`)
 
-    this.config.set('sessionKey', generator.generate({length: 10, numbers: true}));
+    this.config.set(
+      'sessionKey',
+      generator.generate({length: 10, numbers: true})
+    )
 
     try {
       const origin = exec('git config --get remote.origin.url')
@@ -41,7 +44,7 @@ module.exports = class KoaGenerator extends Base {
       {
         type: 'input',
         name: 'name',
-        message: 'Your project name:',
+        message: "The project's name:",
         default: basename(this.destinationRoot()),
       },
       {
@@ -69,6 +72,12 @@ module.exports = class KoaGenerator extends Base {
         filter: keywords =>
           keywords ? keywords.split(',').map(keyword => keyword.trim()) : [],
       },
+      {
+        type: 'input',
+        name: 'slack',
+        message: 'Slack Client ID (blank for none):',
+        filter: clientId => (clientId ? {use: true, clientId} : {use: false}),
+      },
     ]).then(answers => {
       this.config.set(answers)
     })
@@ -76,26 +85,33 @@ module.exports = class KoaGenerator extends Base {
 
   writing () {
     // Copy over static files
-    this.fs.copy(this.templatePath('../static/**/*'), this.destinationRoot(), {
+    this.fs.copy(this.templatePath('static/**/*'), this.destinationRoot(), {
       globOptions: {dot: true},
     })
 
     // Render templates
     this.fs.copyTpl(
-      this.templatePath('**/*'),
+      this.templatePath('default/**/*'),
       this.destinationRoot(),
       this.config.getAll(),
       {globOptions: {dot: true}}
     )
-
-    // Create the flow-typed directory
-    mkdirp(this.destinationPath('flow-typed'))
 
     // Move the gitignore into place
     this.fs.move(
       this.destinationPath('gitignore'),
       this.destinationPath('.gitignore')
     )
+
+    // If Slack integration is enabled, render the Slack templates
+    if (this.config.get('slack').use) {
+      this.fs.copyTpl(
+        this.templatePath('slack/**/*'),
+        this.destinationRoot(),
+        this.config.getAll(),
+        {globOptions: {dot: true}}
+      )
+    }
   }
 
   install () {

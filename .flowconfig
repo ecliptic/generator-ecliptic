@@ -1,10 +1,10 @@
 [ignore]
+<PROJECT_ROOT>/generators/.*/templates/.*
 
 [include]
 
 [libs]
 flow-typed/
-generators/
 
 [options]
 emoji=true
@@ -27,4 +27,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 unsafe.enable_getters_and_setters=true
 
 [version]
-^0.46.0
+^0.55.0

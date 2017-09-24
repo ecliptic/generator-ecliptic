@@ -1,5 +1,7 @@
 // @flow
+<% if (slack.use) { -%>
 import {myCommand} from './Routes/Commands'
+<% } -%>
 import bodyParser from 'koa-bodyparser'
 import chalk from 'chalk'
 import cors from 'kcors'
@@ -23,7 +25,9 @@ const router = koaRouter()
 router.get('/', async ctx => {
   ctx.body = 'ok'
 })
+<% if (slack.use) { -%>
 router.post('/commands/slack/my-command', myCommand)
+<% } -%>
 
 // Use the initialized routes
 app.use(router.routes())

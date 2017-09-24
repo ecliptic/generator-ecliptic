@@ -19,13 +19,19 @@
     "node": "8.4.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel -d build src",
-    "watch": "yarn build -- -w",
-    "clean": "rm -rf public",
-    "test": "cross-env NODE_PATH=src:node_modules jest",
-    "test-watch": "yarn test -- --watch",
+    "test": "cross-env NODE_ENV=test NODE_PATH=src:node_modules jest",
+    "test.watch": "yarn test -- --watch",
     "precommit": "lint-staged",
-    "format": "prettier-eslint --write \"packages/*/src/**/*.js\""
+    "format": "prettier-eslint --write \"packages/*/src/**/*.js\"",
+    "dev": "NODE_ENV=development dotenv node src/Main.js",
+    "dev.watch": "NODE_ENV=development nodemon -x dotenv node src/Main.js",
+    "start": "NODE_ENV=production node src/Main.js",
+    "install.flow": "echo \"Installing Flow types...\" && flow-typed install -s > /dev/null 2>&1",
+    "lint": "eslint --ext .js,.jsx ./",
+    "lint.types": "echo \"Checking Flow types...\" && flow",
+    "postinstall": "yarn install.flow",
+    "precommit": "lint-staged",
+    "prepush": "yarn lint.types && yarn test"
   },
   "dependencies": {
     "history": "^4.6.1",
@@ -100,7 +106,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn run format",
+      "format",
       "git add"
     ]
   }
