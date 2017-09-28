@@ -11,7 +11,7 @@ module.exports = class KoaGenerator extends Base {
   initializing () {
     this.log('\n')
     this.log(text('ecliptic', {font: 'Big Money-nw'}))
-    this.log(`\n\nWelcome to ${chalk.blue('ecliptic:react')}!\n`)
+    this.log(`\n\nWelcome to ${chalk.blue('ecliptic:koa')}!\n`)
 
     this.config.set(
       'sessionKey',
