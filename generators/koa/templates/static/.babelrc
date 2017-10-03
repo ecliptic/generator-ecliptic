@@ -1,16 +1,14 @@
 {
-  "presets": [["es2015", {"loose": true}], "react"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "current"
+      },
+      "loose": true
+    }],
+  ],
   "plugins": [
     "transform-class-properties",
-    "transform-object-rest-spread",
-    "transform-async-to-generator"
-  ],
-  "env": {
-    "development": {
-      "plugins": ["react-hot-loader/babel"]
-    },
-    "production": {
-      "presets": ["react-optimize"]
-    }
-  }
+    "transform-object-rest-spread"
+  ]
 }

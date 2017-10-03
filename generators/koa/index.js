@@ -46,11 +46,13 @@ module.exports = class KoaGenerator extends Base {
         name: 'name',
         message: "The project's name:",
         default: basename(this.destinationRoot()),
+        store: true,
       },
       {
         type: 'input',
         name: 'description',
         message: "The project's description:",
+        store: true,
       },
       {
         type: 'input',
@@ -71,12 +73,14 @@ module.exports = class KoaGenerator extends Base {
         message: 'Comma-separated project keywords:',
         filter: keywords =>
           keywords ? keywords.split(',').map(keyword => keyword.trim()) : [],
+        store: true,
       },
       {
         type: 'input',
         name: 'slack',
         message: 'Slack Client ID (blank for none):',
         filter: clientId => (clientId ? {use: true, clientId} : {use: false}),
+        store: true,
       },
     ]).then(answers => {
       this.config.set(answers)
